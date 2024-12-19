@@ -1,11 +1,9 @@
-from automations import automation_bp
 from conversion import convert_csv_to_str, convert_pdf_to_base64, logger
 from flask import Flask, make_response, request, jsonify
 from functools import wraps
 import requests
 
 app = Flask(__name__)
-app.register_blueprint(automation_bp)
 
 @app.route('/', methods=['GET'])
 def health():
