@@ -55,9 +55,7 @@ def convert_csv_route(file):
 def convert_pdf_route(file):
     try:
         logger.info(f"Starting PDF conversion for file: {file.filename}")
-        raw = convert_pdf_to_base64(file)
-        logger.info(f"Successfully converted PDF data")
-        return f"data:application/pdf;base64,{raw}"
+        return convert_pdf_to_base64(file)
     except Exception as e:
         logger.error(f"Error converting PDF file: {str(e)}")
         logger.error(f"Stack trace: ", exc_info=True)
